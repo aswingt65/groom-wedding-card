@@ -1,0 +1,460 @@
+/* Groom edition: mist blue, pearl white and slate-blue ink.
+   This file is appended only to the groom stylesheet by the build. */
+:root {
+  --background: #e4f2f7;
+  --foreground: #304d60;
+  --muted-foreground: #4b6575;
+  --accent: #48697c;
+  --card: #f5fbfd;
+  --card-foreground: #304d60;
+  --groom-green: #345970;
+  --groom-ink: #304d60;
+  --groom-brass: #87aabd;
+  --groom-ivory: #e4f2f7;
+  --groom-panel-surface: linear-gradient(145deg, #fcf8f0, #f2eadd);
+  --groom-panel-shadow: 0 8px 24px #4b596012, inset 0 1px 0 #fffdf8;
+}
+body { background: var(--groom-ivory); }
+.groom-invitation {
+  background: #e4f2f7;
+  color: var(--groom-ink);
+  isolation: isolate;
+}
+.groom-invitation::before {
+  display: none;
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border: 1px solid #87aabd54;
+  border-radius: 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+.groom-content { max-width: 64rem; }
+
+/* This edition begins with the wedding ceremony; the engagement block is
+   removed from the rendered flow and accessibility tree. */
+.groom-content section:first-of-type { display: none !important; }
+
+.groom-content h1 {
+  color: #345970;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+  line-height: 1.14;
+  letter-spacing: 0.015em;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+.groom-content section h2 {
+  overflow-wrap: anywhere;
+  font-family: var(--font-serif);
+  color: #345970;
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.groom-content [class*='text-[#2c2c2c]'] { color: #304d60; }
+.groom-content [class*='text-[#8b7355]'] { color: #48697c; }
+.groom-content [class*='text-[#888]'] { color: #526f80; }
+.groom-content [class*='text-[#555]'] { color: #4b6575; }
+.groom-content [class*='rounded-3xl'],
+.groom-content .event-info-card,
+.groom-content .venue-location {
+  border-radius: 26px;
+  border: 1px solid #c5ae887a;
+  box-shadow: var(--groom-panel-shadow);
+  background: var(--groom-panel-surface);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+/* Let the blue artwork frame the stationery, without boxes inside boxes. */
+.groom-content section > [class*='rounded-3xl'] {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 20px;
+}
+.groom-content [class*='blur-3xl'] { display: none; }
+.groom-content .event-info-card {
+  border-radius: 20px;
+  box-shadow: var(--groom-panel-shadow) !important;
+  background: var(--groom-panel-surface) !important;
+  border-color: #c5ae887a !important;
+}
+.groom-content .event-info-card:hover { box-shadow: 0 10px 28px #4b596018 !important; }
+.groom-content .event-info-card > div:first-child {
+  border: 1px solid #c5ae887a;
+  background: #e7d9c44d !important;
+  color: #826b48;
+}
+.groom-content .event-info-card h3,
+.groom-content .groom-engagement-reception h3,
+.groom-content .family-contacts h3 { color: #806847; }
+.groom-content .groom-engagement-reception { padding: clamp(26px, 4vw, 40px); }
+.groom-content .event-info-card > div:last-child { opacity: .55; }
+.groom-content .venue-location-name { color: #345970; }
+.groom-content .venue-location-directions {
+  border-radius: 999px;
+  border-color: #345970;
+  background: #345970;
+  color: #f5fbfd;
+  letter-spacing: .025em;
+}
+.groom-content .venue-location-directions:hover { background: #24465c; }
+.groom-content .venue-location-label { color: #806847; overflow-wrap: anywhere; }
+.groom-content .venue-location-map {
+  filter: saturate(.7);
+  width: calc(100% - 24px);
+  margin-inline: 12px;
+  border: 1px solid #c5ae8859;
+  border-radius: 16px;
+}
+.groom-content .invitation-countdown > div > div {
+  backdrop-filter: none;
+  border-radius: 18px;
+  border-color: #c5ae887a;
+  background: var(--groom-panel-surface);
+  box-shadow: inset 0 1px 0 #ffffff70;
+}
+.groom-signoff { color: #345970; }
+.groom-signoff p { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.8; }
+.groom-content .family-contacts > div {
+  border: 1px solid #c5ae887a;
+  background: var(--groom-panel-surface);
+}
+.groom-content .contact-phone-link,
+.groom-content .family-detail-phones a { color: #345970; text-decoration-color: #789eb380; }
+.groom-invitation :is(button, a):focus-visible {
+  outline: 2px solid #567e98;
+  outline-offset: 5px;
+}
+.groom-invitation > .fixed button { border-color: #87aabd80; }
+.groom-audio-control > div { background: #f8f1e7; border-color: #c5ae887a; }
+.groom-audio-control button { min-height: 44px; min-width: 44px; background: #345970; }
+.groom-invitation > .fixed:not(.groom-audio-control) > button { background: #345970; color: #e4f2f7; }
+.groom-share-dialog {
+  border: 1px solid #c5ae887a;
+  border-radius: 24px;
+  background: #f8f1e7;
+  padding: 24px;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+}
+.groom-share-dialog button { min-height: 44px; min-width: 44px; }
+.groom-share-dialog h3 { color: #345970; }
+.groom-share-dialog .grid { gap: 8px; }
+.groom-share-dialog .grid > button { padding: 12px 6px; border-radius: 14px; }
+
+/* Blue-white opening: each door shows one half of the same untiled artwork. */
+.groom-curtains {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  overflow: hidden;
+  color: #34556b;
+}
+.groom-panel {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #edf3f7 url('/assets/groom-blue-glitter.jpg') left center / 100vw 100% no-repeat;
+  overflow: hidden;
+  transition: transform 1.9s cubic-bezier(.76, 0, .24, 1) .15s;
+  will-change: transform;
+}
+.groom-panel-right {
+  background-position: right;
+}
+@media (min-aspect-ratio: 1/1) {
+  .groom-panel { background-image: url('/assets/groom-blue-glitter-landscape.png'); }
+}
+.groom-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, #ffffff70 48%, transparent 66%);
+  background-size: 100vw 100%;
+  background-position: left;
+  animation: groom-cover-sheen 12s ease-in-out infinite;
+  pointer-events: none;
+}
+.groom-panel-right::before { background-position: right; }
+.groom-cover-glint {
+  position: absolute;
+  left: var(--glint-x);
+  top: var(--glint-y);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fffbea;
+  box-shadow: 0 0 8px 2px #e7c87788;
+  opacity: 0;
+  animation: groom-cover-glimmer 7s ease-in-out var(--glint-delay) infinite;
+}
+.groom-cover-glint::before, .groom-cover-glint::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 17px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #fff7d6, transparent);
+  transform: translate(-50%, -50%);
+}
+.groom-cover-glint::after { transform: translate(-50%, -50%) rotate(90deg); }
+@keyframes groom-cover-sheen { 0%, 100% { opacity: .05; } 50% { opacity: .65; } }
+@keyframes groom-cover-glimmer {
+  0%, 35%, 75%, 100% { opacity: 0; transform: scale(.6); }
+  55% { opacity: .85; transform: scale(1); }
+}
+@keyframes groom-seal-breathe { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-3px) scale(1.018); } }
+@keyframes groom-cupid-float {
+  0%, 100% { transform: translateY(2px) scaleX(var(--cupid-facing, 1)) rotate(-4deg); }
+  50% { transform: translateY(-4px) scaleX(var(--cupid-facing, 1)) rotate(4deg); }
+}
+.groom-open {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 32px 24px;
+  border: 0;
+  background: transparent;
+  color: #34556b;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity .65s ease, transform .85s ease;
+}
+.groom-open:focus-visible { outline: 2px solid #34556b !important; outline-offset: -12px !important; }
+.groom-edition {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  color: #4e6b80;
+  margin-bottom: clamp(22px, 4vh, 42px);
+}
+.groom-monogram {
+  display: block;
+  width: clamp(9rem, 34vw, 12rem);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  filter: drop-shadow(0 7px 10px #34556b26);
+  animation: groom-seal-breathe 6s ease-in-out infinite;
+}
+.groom-monogram img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Reuse the original seal's exact alpha outline for the matching blue edit. */
+  -webkit-mask: url('/assets/bride-aa-wax-seal.png') center / contain no-repeat;
+  mask: url('/assets/bride-aa-wax-seal.png') center / contain no-repeat;
+}
+.groom-cover-names {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.7vw, 3.65rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: .02em;
+  margin-top: clamp(28px, 4vh, 42px);
+}
+.groom-cover-date {
+  font-family: var(--font-sans);
+  font-size: .7rem;
+  font-weight: 400;
+  letter-spacing: .19em;
+  margin-top: 18px;
+  color: #526b7e;
+}
+.groom-open-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 26px);
+  margin-top: clamp(30px, 6vh, 58px);
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.3vw, 1.3rem);
+  letter-spacing: .1em;
+  color: #34556b;
+}
+.groom-open-prompt img {
+  width: 60px;
+  height: 70px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: .7;
+  animation: groom-cupid-float 6s ease-in-out infinite;
+}
+.groom-open-prompt img:last-child { --cupid-facing: -1; }
+.groom-tap { font-family: var(--font-sans); font-size: .65rem; color: #526b7e; margin-top: 16px; letter-spacing: .05em; }
+.groom-curtains.is-opening { pointer-events: none; }
+.groom-curtains.is-opening .groom-panel-left { transform: translateX(-101%); }
+.groom-curtains.is-opening .groom-panel-right { transform: translateX(101%); }
+.groom-curtains.is-opening .groom-open { opacity: 0; transform: scale(.97); }
+
+/* The supplied artwork remains one continuous surface while content scrolls. */
+.groom-atmosphere {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.8s ease, visibility 1.8s;
+}
+.groom-atmosphere.is-visible { opacity: 1; visibility: visible; }
+.groom-letter-parallax {
+  position: absolute;
+  inset: -48px -20px;
+  transform: translate3d(0, var(--letter-scroll, 0px), 0);
+}
+.groom-letter-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.groom-atmosphere.is-visible .groom-letter-image {
+  animation: groom-letter-drift 30s ease-in-out infinite alternate;
+}
+.groom-letter-soften {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #f6fcff0a, #f6fcff47 35%, #f6fcff47 65%, #f6fcff0a);
+}
+.groom-letter-sparkles {
+  position: absolute;
+  inset: 0;
+  transform: translate3d(0, var(--letter-scroll, 0px), 0);
+}
+.groom-letter-sparkle {
+  position: absolute;
+  width: var(--sparkle-size);
+  height: var(--sparkle-size);
+  opacity: 0;
+  background: radial-gradient(circle, #fff 0 10%, #ffffff88 12%, transparent 65%);
+}
+.groom-letter-sparkle::before, .groom-letter-sparkle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, transparent, white, transparent);
+  box-shadow: 0 0 4px #6fadc133;
+}
+.groom-letter-sparkle::after { transform: translate(-50%, -50%) rotate(90deg); }
+.groom-atmosphere.is-visible .groom-letter-sparkle {
+  animation: groom-letter-sparkle-rise var(--sparkle-duration) linear var(--sparkle-delay) infinite;
+}
+@keyframes groom-letter-drift {
+  from { transform: scale(1.015) translate3d(-3px, 0, 0); }
+  to { transform: scale(1.045) translate3d(3px, 5px, 0); }
+}
+@keyframes groom-letter-sparkle-rise {
+  0% { opacity: 0; transform: translate3d(0, 108vh, 0) scale(.7); }
+  20% { opacity: .7; }
+  50% { opacity: .3; transform: translate3d(var(--sparkle-sway), 48vh, 0) scale(1); }
+  75% { opacity: .8; }
+  100% { opacity: 0; transform: translate3d(0, -10vh, 0) scale(.7); }
+}
+/* Sparse petals fall over the opened letter, below the floating controls. */
+.groom-petals {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  overflow: hidden;
+  pointer-events: none;
+  animation: groom-petals-arrive 1.8s ease both;
+}
+.groom-petal-path {
+  position: absolute;
+  top: 0;
+  width: var(--petal-size);
+  height: calc(var(--petal-size) * 1.4);
+  opacity: 0;
+  animation: groom-petal-fall var(--petal-duration) linear var(--petal-delay) infinite;
+}
+.groom-petal {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 80% 20% 72% 28% / 68% 25% 75% 32%;
+  background: radial-gradient(ellipse at 28% 24%, var(--petal-light) 10%, var(--petal-light) 35%, var(--petal-shade) 100%);
+  box-shadow: inset 1px 1px 2px #ffffff80, 1px 2px 3px #645f5712;
+  transform-origin: 45% 65%;
+  animation: groom-petal-flutter var(--petal-flutter) ease-in-out var(--petal-delay) infinite;
+}
+@keyframes groom-petals-arrive { from { opacity: 0; } to { opacity: 1; } }
+@keyframes groom-petal-fall {
+  0% { transform: translate3d(0, -10vh, 0); opacity: 0; }
+  12% { opacity: .65; }
+  85% { opacity: .65; }
+  100% { transform: translate3d(var(--petal-sway), 110vh, 0); opacity: 0; }
+}
+@keyframes groom-petal-flutter {
+  0%, 100% { transform: translateX(0) rotateZ(calc(var(--petal-turn) * 20deg)) rotateY(15deg); }
+  35% { transform: translateX(var(--petal-sway)) rotateZ(calc(var(--petal-turn) * -35deg)) rotateY(65deg); }
+  70% { transform: translateX(calc(var(--petal-sway) * -.35)) rotateZ(calc(var(--petal-turn) * 40deg)) rotateY(-25deg); }
+}
+@media (max-width: 599px) {
+  .groom-petal-path:nth-child(n+13) { display: none; }
+}
+.groom-reveal { position: fixed; inset: 0; z-index: 130; pointer-events: none; overflow: hidden; }
+.groom-reveal-light { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #f5e1ac; box-shadow: 0 0 36px 13px #f0dca638; animation: groom-light 2.5s ease-out both; }
+.groom-gold-dust { position: absolute; top: 50%; left: 50%; width: var(--dust-size); height: var(--dust-size); border-radius: 50%; background: #cbb479; box-shadow: 0 0 6px #e2d0a4aa; opacity: 0; animation: groom-dust 2.6s ease-out var(--dust-delay) both; }
+@keyframes groom-light { 0% { opacity: 0; transform: scaleY(.2); } 25% { opacity: .65; } 65% { opacity: .25; transform: scaleY(1); } 100% { opacity: 0; } }
+@keyframes groom-dust { 0% { opacity: 0; transform: translate(0, 0); } 22% { opacity: .7; } 100% { opacity: 0; transform: translate(var(--dust-x), var(--dust-y)); } }
+@media (max-width: 599px) {
+  .groom-content { padding: 64px 18px 100px; }
+  .groom-content section { padding-inline: 6px; }
+  .groom-content section > [class*='rounded-3xl'] { padding: 12px 0; }
+  .groom-content .event-info-card { padding: 26px 18px; }
+  .groom-content .family-contacts > div { padding: 26px 18px; }
+  .groom-invitation::before { inset: 9px; }
+  .groom-content .family-detail-phones { gap: 0 16px; flex-wrap: wrap; }
+  .groom-audio-control { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); }
+  .groom-audio-control > div { padding: 4px; }
+  .groom-audio-control > div > div { display: none; }
+  .groom-invitation > .fixed.bottom-8 { left: 16px; bottom: max(16px, env(safe-area-inset-bottom)); }
+}
+@media (max-height: 560px) {
+  .groom-open { padding-block: 20px; }
+  .groom-edition { margin-bottom: 15px; }
+  .groom-monogram { width: 80px; }
+  .groom-cover-names { margin-top: 18px; font-size: 2rem; }
+  .groom-cover-date { margin-top: 10px; }
+  .groom-open-prompt { margin-top: 20px; }
+  .groom-tap { margin-top: 8px; }
+  .groom-open-prompt img { width: 40px; height: 46px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .groom-petals { display: none; animation: none; }
+  .groom-petal-path, .groom-petal { animation: none; }
+  .groom-monogram, .groom-open-prompt img, .groom-panel::before, .groom-cover-glint { animation: none; }
+  .groom-open-prompt img:last-child { transform: scaleX(-1); }
+  .groom-cover-glint, .groom-panel::before { display: none; }
+  .groom-atmosphere *, .groom-reveal * { animation: none !important; }
+  .groom-atmosphere { transition: opacity .2s ease; }
+  .groom-letter-parallax, .groom-letter-image { transform: none; }
+  .groom-letter-sparkles { display: none; }
+  .groom-gold-dust, .groom-reveal-light { display: none; }
+  .groom-panel { transition: opacity .2s ease; }
+  .groom-curtains.is-opening .groom-panel { transform: none; opacity: 0; }
+  .groom-open { transition: opacity .2s ease; }
+  .groom-curtains.is-opening .groom-open { transform: none; }
+  .groom-content * { transform: none !important; transition: none !important; }
+  .groom-content [style] { opacity: 1 !important; }
+}

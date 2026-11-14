@@ -1,0 +1,14 @@
+{
+  "name": "groom-wedding-invitation-marriage-only",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone marriage-only wedding invitation for Dr. Arun Joy Thomas and Dr. Anthea Judy Gilbert.",
+  "scripts": {
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "verify": "node scripts/build.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
