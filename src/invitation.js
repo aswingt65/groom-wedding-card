@@ -1015,7 +1015,7 @@ function GroomReveal() {
                                     }),
                                     (0, s.jsx)("p", {
                                       children:
-                                        "Poomughathu House, Mukkad, Kavandu P.O, Kollam - 691003",
+                                        "Poomughathu House, Mukkad, Kavanadu P.O, Kollam - 691003",
                                     }),
                                     (0, s.jsx)("p", {
                                       className: "family-detail-phones",
@@ -1053,7 +1053,7 @@ function GroomReveal() {
                             }),
                             (0, s.jsx)("p", { children: "AT 10:30 AM" }),
                             (0, s.jsx)("p", {
-                              children: "AT TRINITY (MEDICAL COLLEGE) MAR THOMA SYRIAN CHURCH,",
+                              children: "AT TRINITY MAR THOMA CHURCH, MEDICAL COLLEGE,",
                             }),
                             (0, s.jsx)("p", {
                               children: "THIRUVANANTHAPURAM.",
@@ -1207,7 +1207,7 @@ function GroomReveal() {
                                     size: 24,
                                   }),
                                   title: "Where",
-                                  content: "Trinity (Medical College) Mar Thoma Syrian Church",
+                                  content: "TRINITY MAR THOMA CHURCH, MEDICAL COLLEGE",
                                   subContent: "Thiruvananthapuram",
                                 }),
                               ],
@@ -1216,7 +1216,7 @@ function GroomReveal() {
                             (0, s.jsxs)("div", {
                               className: "wedding-venue-grid",
                               children: [
-                                (0, s.jsx)(VenueMap, {"label":"Wedding church","title":"Trinity (Medical College) Mar Thoma Syrian Church","address":"Thiruvananthapuram","href":"https://maps.app.goo.gl/gGeWqZYqqkfbE4QLA","embed":"https://www.google.com/maps?q=8.5173548,76.9318288&z=16&output=embed","action":"Directions to church"}),
+                                (0, s.jsx)(VenueMap, {"label":"Wedding church","title":"TRINITY MAR THOMA CHURCH, MEDICAL COLLEGE","address":"Thiruvananthapuram","href":"https://maps.app.goo.gl/gGeWqZYqqkfbE4QLA","embed":"https://www.google.com/maps?q=8.5173548,76.9318288&z=16&output=embed","action":"Directions to church"}),
                                 (0, s.jsx)(VenueMap, {"label":"Reception venue","intro":"Reception to follow at the","title":"Sooryaprabha Convention Centre","address":"Mannanthala, Thiruvananthapuram","href":"https://maps.app.goo.gl/dwpdAW2Uzjs1xFCW9","embed":"https://www.google.com/maps?q=8.565688,76.9440848&z=16&output=embed","action":"Directions to reception"})
                               ]
                             }),
