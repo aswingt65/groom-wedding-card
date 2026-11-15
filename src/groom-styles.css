@@ -1,6 +1,9 @@
 /* Groom edition: mist blue, pearl white and slate-blue ink.
    This file is appended only to the groom stylesheet by the build. */
 :root {
+  /* Keep the stationery palette intact even in force-dark or high-contrast webviews. */
+  color-scheme: only light;
+  forced-color-adjust: none;
   --background: #e4f2f7;
   --foreground: #304d60;
   --muted-foreground: #4b6575;
